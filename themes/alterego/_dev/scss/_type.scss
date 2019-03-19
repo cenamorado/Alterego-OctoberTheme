@@ -1,0 +1,86 @@
+/*
+ * Type
+ */
+body,
+p,
+a,
+input,
+textarea,
+button {
+	font-family: $body-font;
+	font-weight: 400;
+	color: #5B5B5D;
+	font-size: 16px;
+	@include smooth-font();
+}
+p,
+a,
+input,
+textarea,
+button {
+	@include font-responsive(16px, 20px, 360px, 1280px);
+}
+a {
+	@include transition(all, 0.2s, ease, 0s);
+	&:hover,
+	&:focus {
+		color: $main-color;
+		text-decoration: none;
+	}
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: $header-font;
+	font-weight: 600;
+	line-height: 1.1;
+	color: #000000;
+	margin-bottom: 0;
+	@include smooth-font();
+}
+h1,
+.h1 {
+	@include font-responsive(32px, 36px, 360px, 1280px);
+}
+h2,
+.h2 {
+	@include font-responsive(26px, 30px, 360px, 1280px);
+}
+h3,
+.h3 {
+	@include font-responsive(24px, 28px, 360px, 1280px);
+}
+h4,
+.h4 {
+	@include font-responsive(20px, 24px, 360px, 1280px);
+}
+h5,
+.h5 {
+	@include font-responsive(18px, 20px, 360px, 1280px);
+}
+h6,
+.h6 {
+	font-family: $body-font;
+	font-weight: 700;
+	font-size: 16px;
+}
+ul,
+ol {
+	padding-left: 25px;
+	li p {
+		margin-bottom: 5px;
+	}
+}
+.p2 {
+	line-height: 30px;
+	color: #000;
+}

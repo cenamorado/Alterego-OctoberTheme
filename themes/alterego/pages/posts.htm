@@ -1,0 +1,37 @@
+title = "Posts"
+url = "/posts/:page?"
+layout = "default"
+
+[blogPosts]
+postPage = "post"
+postsPerPage = "10"
+==
+
+<div class="container post-container">
+    {% for post in posts %}
+        <div class="post-item mb-5">
+            <a href="{{post.url}}">
+                <img src="{{ post.featured_images[0].path }}" alt="post.title" class="post-item-img" />
+            </a>
+            <div class="post-item-content">
+                <h3 class="mb-4 mt-4">{{ post.title }}</h3>
+                <p class="mb-4">{{ post.summary|raw }}</p>
+                <hr />
+                <div class="social-content">
+                    <div class="comments">
+                        <a href="">
+                            <i class="fas fa-comment"></i>
+                            <p>16 Comentarios</p>
+                        </a>
+                    </div>
+                    <div class="shares">
+                        <a href="">
+                            <i class="fas fa-share"></i>
+                            <p>Share</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,57 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# October installation files
+/install_files/
+/bower_components/
+/bootstrap
+/config
+/modules
+/node_modules
+/storage
+/plugins/*
+!plugins/five04
+/plugins/five04/*
+/themes/*
+/vendor
+.htaccess
+artisan
+index.php
+
+#Theme and plugin files
+!/plugins/five04/blank
+!/themes/alterego
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+.sass-cache/
+*.css.map
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+/_dev/design/
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db

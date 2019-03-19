@@ -1,0 +1,32 @@
+/*
+* Google Fonts
+*/
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+/*
+* Vendor Files
+*/
+@import '../vendor/bootstrap/scss/bootstrap';
+@import '../vendor/slick/scss/slick';
+
+/*
+* Font Responsive
+*/
+@import '../vendor/font-responsive/font-responsive';
+
+/*-----------------------------------------------------------------------------------
+  *  Derechos de autor (c) Cinco 04 Digital SA de CV. Todos los derechos reservados.
+  *---------------------------------------------------------------------------------*/
+/*
+* Main
+*/
+@import 'variables';
+@import 'setup';
+@import 'type';
+@import 'grid';
+@import 'components';
+@import 'pages';
+@import 'helpers';
+/*-----------------------------------------------------------------------------------
+  *  Derechos de autor (c) Cinco 04 Digital SA de CV. Todos los derechos reservados.
+  *---------------------------------------------------------------------------------*/

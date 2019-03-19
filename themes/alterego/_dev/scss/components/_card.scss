@@ -1,0 +1,21 @@
+.card {
+	position: relative;
+	padding: 30px;
+	margin: 15px 0;
+	background-color: $secondary-bg;
+	text-align: center;
+	&.with-icon {
+		margin-top: 65px;
+		.card-title {
+			margin-top: 35px;
+		}
+	}
+}
+.card-icon {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	@include translate(-50%, 0);
+}

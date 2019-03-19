@@ -1,0 +1,47 @@
+// Strip Unit from Value
+@function strip-unit($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+// Convert px to rem
+@function pxtorem($n, $root: 16px) {
+  @return (strip-unit($n) / strip-unit($root)) * 1rem;
+}
+
+// Responsive Typography Mixin
+@mixin font-responsive($min-size: 12px, $max-size: 21px,
+                       $min-width: 420px, $max-width: 1280px,
+                       $root-size: 16px) {
+  $size-unit: unit($min-size);
+  $max-size-unit: unit($max-size);
+  $width-unit: unit($min-width);
+  $max-width-unit: unit($max-width);
+
+  @if (($size-unit != $max-size-unit) or ($width-unit != $max-width-unit)) {
+    @error 'min/max unit types must match';
+  }
+
+  @if ($size-unit == rem and $width-unit == px) {
+    $min-width: pxtorem($min-width, $root-size);
+    $max-width: pxtorem($max-width, $root-size);
+  } @elseif ($size-unit != $width-unit and
+            ($size-unit != rem or $width-unit != em)) {
+    @error 'this combination of units is not supported';
+  }
+
+  $size-diff: strip-unit($max-size) - strip-unit($min-size);
+  $width-diff: strip-unit($max-width) - strip-unit($min-width);
+
+  $calculated: "#{$min-size} + #{$size-diff} " +
+               "* ((100vw - #{$min-width}) / #{$width-diff})";
+
+  font-size: calc(#{unquote($calculated)});
+
+  @media only screen and (max-width: $min-width) {
+    font-size: $min-size;
+  }
+
+  @media only screen and (min-width: $max-width) {
+    font-size: $max-size;
+  }
+}

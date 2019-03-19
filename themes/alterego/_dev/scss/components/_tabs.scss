@@ -1,0 +1,45 @@
+// Default tabs funcionality
+.tabs-content {
+	.tab-content {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}
+// Tab Styles
+.tabs-1,
+.tabs-2 {
+	.tabs {
+		@include flex();
+		@include transition(all, 0.15s, ease-in, 0s);
+		overflow: auto;
+		@include hide-scrollbar();
+		.tab-link {
+			white-space: nowrap;
+			padding: 15px 25px;
+			text-align: center;
+			flex: 1;
+		}
+	}
+}
+.tabs-1 {
+	.tab-link {
+		color: #fff;
+		background-color: $dark-bg;
+		border-top: 2px solid transparent;
+		border-right: 1px solid #fff;
+		border-left: 1px solid #fff;
+		&.active {
+			border-top: 2px solid $main-color;
+			border-right: none;
+			border-left: none;
+			background-color: #fff;
+			color: $main-color;
+		}
+	}
+	.tab-content {
+		background-color: #fff;
+		padding: 15px;
+	}
+}

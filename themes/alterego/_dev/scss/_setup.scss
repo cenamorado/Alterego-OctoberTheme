@@ -1,0 +1,48 @@
+/*
+ * Miscellaneous
+ */
+html,
+body {
+	overflow-x: hidden;
+	&.overflow-hidden {
+		overflow: hidden;
+		height: 100vh;
+	}
+}
+*::selection {
+	background: $selection-color;
+	color: #fff;
+}
+*::-moz-selection {
+	background: $selection-color;
+	color: #fff;
+}
+::-webkit-scrollbar {
+	width: 8px;
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #dddddd;
+	border: none;
+}
+ul,
+ol {
+	padding-left: 25px;
+	li p {
+		margin-bottom: 5px;
+	}
+}
+.fa-phone {
+	@include rotate(90deg);
+}
+/*
+  * Sticky Footer
+  */
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+#layout-content {
+	flex: 1;
+}

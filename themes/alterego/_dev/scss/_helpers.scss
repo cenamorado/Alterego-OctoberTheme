@@ -1,0 +1,59 @@
+// Text colors
+.text-main {
+	color: $main-color !important;
+}
+.text-secondary {
+	color: $secondary-color !important;
+}
+.text-blue {
+	color: $blue !important;
+}
+.text-green {
+	color: $green !important;
+}
+.text-red {
+	color: $red !important;
+}
+.text-yellow {
+	color: $yellow !important;
+}
+.text-white {
+	color: #fff !important;
+}
+.text-black {
+	color: #000 !important;
+}
+
+// Background colors
+.bg-main {
+	background-color: $main-bg !important;
+}
+.bg-light {
+	background-color: #fff !important;
+}
+.bg-blue {
+	background-color: $blue !important;
+}
+.bg-green {
+	background-color: $green !important;
+}
+.bg-red {
+	background-color: $red !important;
+}
+.bg-yellow {
+	background-color: $yellow !important;
+}
+.bg-brown {
+	background-color: $brown !important;
+}
+.bg-white {
+	background-color: #fff !important;
+}
+.bg-black {
+	background-color: #000000 !important;
+}
+
+// Others
+.text-nowrap {
+	white-space: nowrap !important;
+}

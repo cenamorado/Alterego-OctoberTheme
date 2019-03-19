@@ -1,0 +1,22 @@
+/*
+ * Navigation
+*/
+.nav {
+	@include flex();
+	flex-wrap: wrap;
+}
+.nav-link {
+	flex: 1;
+	text-align: center;
+	white-space: nowrap;
+	padding: 15px 25px;
+	background-color: $third-bg;
+	border: 2px solid #fff;
+
+	&.active,
+	&:hover,
+	&:focus {
+		background-color: $main-color;
+		color: #fff;
+	}
+}

@@ -1,0 +1,49 @@
+.btn {
+	border-style: solid;
+	border-width: 2px;
+	padding: 0.75em 1.75em;
+	margin: 0;
+	display: inline-block;
+	position: relative;
+	background: none;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-family: $header-font;
+	white-space: nowrap;
+	@include transition(all, 0.15s, linear, 0s);
+	&:hover,
+	&:focus {
+		box-shadow: none;
+		outline: none;
+	}
+	&.btn-1 {
+		border-color: $main-color;
+		background-color: $main-color;
+		color: #fff;
+		svg {
+			color: #fff;
+			margin-right: 6px;
+		}
+		&:hover,
+		&:focus {
+			border-color: darken($main-color, 10%);
+			background-color: darken($main-color, 10%);
+		}
+		&:active {
+			border-color: darken($main-color, 15%);
+			background-color: darken($main-color, 15%);
+		}
+	}
+	&.btn-2 {
+		border-color: $main-color;
+		color: $main-color;
+		&:hover,
+		&:focus {
+			background-color: $main-color;
+			color: #fff;
+		}
+	}
+	&.btn-block {
+		width: 100%;
+	}
+}

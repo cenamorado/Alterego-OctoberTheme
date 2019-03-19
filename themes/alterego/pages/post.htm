@@ -1,0 +1,34 @@
+layout = "default"
+url = "/posts/post/:slug"
+
+[blogPost]
+==
+<div class="container">
+    {% if post.featured_images[0] %}
+    <div class="post-featured-image" style="background-image: url('{{ post.featured_images[0].path }}')" >
+        <div class="post-category">
+            <h6>ADVENTURE</h6>
+        </div>
+    </div>
+    {% else %}
+    <h5>slick</h5>
+    {% endif %}
+    <div class="post-shares-bottons mt-3 mb-3">
+        <div class="comments">
+            <a href="">
+                <i class="fas fa-comment"></i>
+                <p>16 Comentarios</p>
+            </a>
+        </div>
+        <div class="shares">
+            <a href="">
+                <i class="fas fa-share"></i>
+                <p>Share</p>
+            </a>
+        </div>
+    </div>
+    <h3 class="post-title">{{ post.title }}</h3>
+    <h2>{{ post.summary|raw }}</h2>
+
+    <p>{{ post.content_html|raw }}</p>
+</div>

@@ -1,0 +1,86 @@
+description = "Default layout"
+
+[SeoCmsPage]
+==
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-----------------------------------------------------------------------------------
+         *  Derechos de autor (c) Cinco 04 Digital SA de CV. Todos los derechos reservados.
+         *---------------------------------------------------------------------------------->
+    <meta charset="utf-8">
+
+    {% component 'SeoCmsPage' %}
+
+    <meta name="author" content="504 Digital">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <meta name="google-site-verification" content="" />
+
+    <!--FAVICONS-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/images/favicon/apple-touch-icon.png'|theme }}">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/favicon/favicon-32x32.png'|theme }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/favicon/favicon-16x16.png'|theme }}" sizes="16x16">
+    <link rel="manifest" href="{{ 'assets/images/favicon/manifest.json'|theme }}">
+    <link rel="mask-icon" href="{{ 'assets/images/favicon/safari-pinned-tab.svg'|theme }}" color="#00a4ff">
+    <link rel="shortcut icon" href=" {{ 'assets/images/favicon/favicon.ico'|theme }} ">
+    <meta name="theme-color" content="#ffffff">
+    <!--end FAVICONS-->
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Main CSS -->
+    <link href="{{ 'assets/css/stylesheet.css'|theme }}" rel="stylesheet">
+    {% styles %}
+
+    <!-- <script>
+            Google Analytics
+        </script> -->
+</head>
+
+<body>
+
+    <header id="layout-header">
+        {% partial 'header' %}
+    </header>
+
+    <section id="layout-content">
+        {% page %}
+    </section>
+
+    <footer id="layout-footer">
+        {% partial 'footer' %}
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <!-- Tether -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <!-- Slick -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Wow -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!-- Main JS -->
+    <script src="{{ 'assets/js/app.js'|theme }}"></script>
+    <!-- Transformicons
+    <script src="{{ 'assets/js/transformicons.js'|theme }}"></script>
+    <script>transformicons.add('.tcon')</script> -->
+
+    {% framework extras %}
+    {% scripts %}
+    <!-----------------------------------------------------------------------------------
+         *  Derechos de autor (c) Cinco 04 Digital SA de CV. Todos los derechos reservados.
+         *---------------------------------------------------------------------------------->
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+/*
+ * Colors
+ */
+
+
+
+ //Oters
+$gold: #e6b16a;
+$brown: brown;
+
+$main-color: $blue;
+$secondary-color: $gold;
+
+$main-bg: #F7F7F7;
+$secondary-bg: #f0f0f0;
+$third-bg: #cccccc;
+$dark-bg: #282828;
+
+$font-color-light: #fff;
+$font-color-dark: #2e2e2e;
+
+$selection-color: $main-color;
+
+/*
+  * Fonts
+  */
+$body-font: 'Quicksand', sans-serif;
+$body-font-size: 16px;
+$header-font: 'Quicksand', sans-serif;
+
+/*
+  * Others
+  */
+$assets-path: '/themes/alterego/assets/';
+
+/*
+  * Z
+  */
+$z-navbar: 2800;
+$z-navbar-mobile: 3000;
+$z-navbar-bg: 2900;
+$z-modal: 3100;
+$z-dropdown: 100;
+$z-title-main: 1000;
+
+/*
+  * Mixins
+  */
+@mixin transition($property, $duration, $function, $delay) {
+	-webkit-transition: $property $duration $function $delay;
+	-moz-transition: $property $duration $function $delay;
+	-o-transition: $property $duration $function $delay;
+	transition: $property $duration $function $delay;
+}
+@mixin translate($x, $y) {
+	-webkit-transform: translate($x, $y);
+	-moz-transform: translate($x, $y);
+	-o-transform: translate($x, $y);
+	-ms-transform: translate($x, $y);
+	transform: translate($x, $y);
+}
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+@mixin flex() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+@mixin background-img(
+	$url,
+	$repeat: no-repeat,
+	$position: center center,
+	$size: cover
+) {
+	background-image: url(#{$assets-path}#{$url});
+	background-repeat: $repeat;
+	background-position: $position;
+	background-size: $size;
+}
+@mixin hide-scrollbar() {
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+@mixin smooth-font() {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+@mixin absolute-overlay($z: 1, $bg: rgba(#000, 0.3), $h: 100%) {
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: $h;
+		z-index: $z;
+		background-color: $bg;
+	}
+}
+@mixin reset-appearance() {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+/* *
+ * Animations */
+@keyframes slide {
+	0% {
+		background-position-x: 0%;
+	}
+	100% {
+		background-position-x: 600vw;
+	}
+}

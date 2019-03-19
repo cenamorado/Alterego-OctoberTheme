@@ -1,0 +1,15 @@
+.form-control {
+	width: 100%;
+	margin-bottom: 15px;
+	font-size: $body-font-size;
+	font-family: $body-font;
+	padding: 7px 15px;
+	border: none;
+	-webkit-appearance: none;
+	appearance: none;
+	&:hover,
+	&:focus &:active {
+		outline: none;
+		box-shadow: none;
+	}
+}

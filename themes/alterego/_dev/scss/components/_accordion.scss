@@ -1,0 +1,53 @@
+// Default Accordion Funtionality
+.accordion {
+	.accordion-item {
+		.reveal {
+			height: 0;
+			overflow: hidden;
+			@include transition(all, 0.1s, linear, 0s);
+		}
+		&.active {
+			.reveal {
+				height: 100%;
+			}
+		}
+	}
+	.accordion-content {
+		padding: 25px;
+	}
+}
+.accordion-heading {
+	cursor: pointer;
+}
+// Accordion Styles
+.accordion-1 {
+	width: 95%;
+	max-width: 1000px;
+	margin: 30px auto;
+	.accordion-item {
+		.accordion-heading {
+			@include flex();
+			justify-content: space-between;
+			align-items: center;
+			background-color: $secondary-bg;
+			padding: 10px 20px;
+		}
+		&.active,
+		&:hover,
+		&:focus {
+			.accordion-heading {
+				color: $main-color;
+				svg {
+					color: $main-color;
+				}
+			}
+		}
+	}
+	.reveal {
+		background-color: $main-bg;
+	}
+	.fa-plus {
+		margin-left: auto;
+		font-size: 16px;
+	}
+}
