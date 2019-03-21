@@ -8,11 +8,6 @@ Follow these steps for installation:
 # Clone this repo into your desired location.
 git clone https://github.com/504-digital/blank-october-website.git <projectName>
 
-# Delete the .git folder.
-rm -R .git
-
-# Replace blank theme name for actual theme name on main theme folder and replace the **blank theme** reference in the and the following files: **.gitignore, package.json, webpack.mix.js** and this **README.md** with your own.
-
 # Download OctoberCMS in the folder you cloned this repo.
 php -r "eval('?>'.file_get_contents('https://octobercms.com/api/installer'));"
 php artisan october:fresh
@@ -26,6 +21,11 @@ php artisan october:install
 
 # Set your new theme active
 php artisan theme:use <projectName>
+
+#Plugins Require
+Blog
+Next and Prev Pos
+SEO
 
 # Install dependencies
 npm install
