@@ -1,0 +1,28 @@
+.post-shares-bottons {
+	width: 100%;
+	border-radius: 10px;
+	background: $main-bg;
+	@include flex();
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 25px 30px;
+	.comments,
+	.shares {
+		a {
+            @include flex();
+            align-items: center;
+            color: $gray;
+			p {
+				margin: 0;
+				margin-left: 10px;
+				color: $black;
+				font-weight: 600;
+			}
+		}
+	}
+}
+@include media-breakpoint-down(md) {
+} // md
+@include media-breakpoint-down(sm) {
+} //sm

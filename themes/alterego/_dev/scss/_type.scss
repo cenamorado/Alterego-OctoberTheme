@@ -8,8 +8,8 @@ input,
 textarea,
 button {
 	font-family: $body-font;
-	font-weight: 400;
-	color: #5B5B5D;
+	font-weight: 500;
+	color: #333333;
 	font-size: 16px;
 	@include smooth-font();
 }
@@ -18,13 +18,14 @@ a,
 input,
 textarea,
 button {
-	@include font-responsive(16px, 20px, 360px, 1280px);
+	@include font-responsive(16px, 22px, 360px, 1280px);
 }
 a {
+	color: $blue;
 	@include transition(all, 0.2s, ease, 0s);
 	&:hover,
 	&:focus {
-		color: $main-color;
+		color: $blue;
 		text-decoration: none;
 	}
 }
@@ -43,7 +44,7 @@ h6,
 	font-family: $header-font;
 	font-weight: 600;
 	line-height: 1.1;
-	color: #000000;
+	color: $black;
 	margin-bottom: 0;
 	@include smooth-font();
 }
@@ -82,5 +83,5 @@ ol {
 }
 .p2 {
 	line-height: 30px;
-	color: #000;
+	color: $black;
 }

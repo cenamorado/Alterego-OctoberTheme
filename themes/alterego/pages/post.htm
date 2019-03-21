@@ -1,13 +1,24 @@
+
+url = "/posts/:category?/:slug?"
 layout = "default"
-url = "/posts/post/:slug"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+category = ":slug"
 
 [blogPost]
+slug = "{{ :slug }}"
+categoryPage = "category"
+
+[nextAndPrev]
+category = "current"
+postPage = "post"
 ==
 <div class="container">
     {% if post.featured_images[0] %}
     <div class="post-featured-image" style="background-image: url('{{ post.featured_images[0].path }}')" >
         <div class="post-category">
-            <h6>ADVENTURE</h6>
+            <h6>{{ post.categories[0].name }}</h6>
         </div>
     </div>
     {% else %}
@@ -17,7 +28,7 @@ url = "/posts/post/:slug"
         <div class="comments">
             <a href="">
                 <i class="fas fa-comment"></i>
-                <p>16 Comentarios</p>
+                <p class="fb-comments-count" data-href="http://localhost:3002/posts/{{ post.categories[0].name }}/{{post.slug}}"></p>
             </a>
         </div>
         <div class="shares">
@@ -27,8 +38,11 @@ url = "/posts/post/:slug"
             </a>
         </div>
     </div>
-    <h3 class="post-title">{{ post.title }}</h3>
-    <h2>{{ post.summary|raw }}</h2>
-
+    <h3 class="post-title mb-4">{{ post.title }}</h3>
     <p>{{ post.content_html|raw }}</p>
+
+    {% component 'nextAndPrev' %}
+
+    <div id="fb-root"></div>
+    <div class="fb-comments" data-href="http://localhost:3002/posts/{{ post.categories[0].name }}/{{post.slug}}" data-width="100%" data-numposts="15" data-mobile="Auto-detected"></div>
 </div>

@@ -1,8 +1,9 @@
 /*
  * Colors
  */
-
-
+$blue: #1F45FF;
+$gray: #BDBDBD;
+$black-posts:#5B5B5D;
 
  //Oters
 $gold: #e6b16a;
@@ -16,8 +17,9 @@ $secondary-bg: #f0f0f0;
 $third-bg: #cccccc;
 $dark-bg: #282828;
 
+$font-color: $black;
 $font-color-light: #fff;
-$font-color-dark: #2e2e2e;
+
 
 $selection-color: $main-color;
 
@@ -32,7 +34,7 @@ $header-font: 'Quicksand', sans-serif;
   * Others
   */
 $assets-path: '/themes/alterego/assets/';
-
+$nav-height: 70px;
 /*
   * Z
   */

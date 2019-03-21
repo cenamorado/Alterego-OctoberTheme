@@ -1,0 +1,16 @@
+{% set prev = __SELF__.prevPost %}
+{% set next = __SELF__.nextPost %}
+<div id="next-prev" class="mb-5">
+	<div class="prev-post">
+		{% if prev %}
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <h4><a href="{{ prev.url }}">Previous</a></h4>
+		{% endif %}
+	</div>
+	<div class="next-post">
+		{% if next %}
+            <h4><a href="{{ next.url }}">Next</a></h4>
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		{% endif %}
+	</div>
+</div>

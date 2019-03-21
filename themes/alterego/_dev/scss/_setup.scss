@@ -44,5 +44,6 @@ body {
 	min-height: 100vh;
 }
 #layout-content {
+	margin-top: $nav-height;
 	flex: 1;
 }

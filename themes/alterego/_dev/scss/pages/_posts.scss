@@ -5,10 +5,13 @@
 	.post-item {
 		width: 100%;
 		margin: 5px 0;
-		img {
+		&-img {
 			width: 100%;
-			height: auto;
+			height: 500px;
 			border-radius: 5px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
 		}
 		.post-item-content {
 			margin: 0 auto;
@@ -18,22 +21,26 @@
 			-moz-box-shadow: 0px 0px 41px -10px rgba(0, 0, 0, 0.61);
 			box-shadow: 0px 0px 41px -10px rgba(0, 0, 0, 0.61);
 			p {
+				color: $black-posts;
 				font-weight: 700;
 			}
 			.social-content {
 				@include flex();
 				flex-direction: row;
 				justify-content: space-between;
+				padding: 25px 30px;
 				.comments,
 				.shares {
 					a {
 						@include flex();
+						align-items: center;
+						color: $gray;
 						p {
 							margin: 0;
+							margin-left: 10px;
+							color: $black;
+							font-weight: 600;
 						}
-					}
-					i {
-						margin: 0 10px;
 					}
 				}
 			}
@@ -43,6 +50,9 @@
 @include media-breakpoint-down(md) {
 	.post-container {
 		.post-item {
+			&-img {
+				height: 150px;	
+			}
 			h3 {
 				font-size: 20px;
 			}
@@ -50,6 +60,9 @@
 				padding: 15px 15px;
 				p {
 					font-size: 13px;
+				}
+				.social-content {
+					padding: 10px 5px;
 				}
 			}
 		}
