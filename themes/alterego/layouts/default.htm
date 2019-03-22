@@ -1,6 +1,11 @@
 description = "Default layout"
 
 [SeoCmsPage]
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "posts"
 ==
 <!DOCTYPE html>
 <html>
@@ -10,8 +15,12 @@ description = "Default layout"
          *  Derechos de autor (c) Cinco 04 Digital SA de CV. Todos los derechos reservados.
          *---------------------------------------------------------------------------------->
     <meta charset="utf-8">
-
-    {% component 'SeoCmsPage' %}
+    {% if this.page.id == 'post' %}
+        {% partial 'ogmeta' %}
+    {% else %}
+        {% component 'SeoCmsPage' %}
+    {% endif %}  
+    
 
     <meta name="author" content="504 Digital">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -55,7 +64,9 @@ description = "Default layout"
         {% partial 'footer' %}
     </footer>
     <!-- Facebook Api Comments -->
-    <script src="https://graph.facebook.com/v2.4/?fields=share{comment_count}&amp;id=<http://localhost:3002/posts/post/{{post.slug}}>"></script>
+    {% if this.page.id == post %}
+    <script src="https://graph.facebook.com/v2.4/?fields=share{comment_count}&amp;id=<http://localhost:3000/post/{{post.slug}}>"></script>
+    {% endif %}    
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

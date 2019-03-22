@@ -1,20 +1,16 @@
-title = "Inicio"
+title = ""
 url = "/"
 layout = "default"
-description = ""
-meta_title = ""
-meta_description = ""
 is_hidden = 0
-seo_keywords = ""
 robot_index = "index"
 robot_follow = "follow"
-
 ==
-
 <div class="container">
    <div class="home-category-container">
-       <div class="categorys"></div>
-       <div class="categorys"></div>
-       <div class="categorys"></div>
-   </div>
+   {% for category in categories %}      
+        <a  href="{{ category.url }}" class="categorys" style="background-image: url('{{ category.featured_images[0].path}}')">               
+            <h2>{{ category.name }}</h2>
+        </a>       
+    {% endfor %}
+    </div>
 </div>

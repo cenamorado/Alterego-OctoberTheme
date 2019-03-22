@@ -23,7 +23,7 @@ mix.browserSync({
 	proxy: themeName + '.devel',
 	host: themeName + '.devel',
 	notify: false,
-	browser: 'google chrome',
+	browser: 'default',
 	files: [
 		'./themes/' + themeName + '/assets/css/*.css',
 		'./themes/' + themeName + '/assets/js/*.js',

@@ -1,0 +1,26 @@
+{% if post.seo_title %}
+    <title>{{ post.seo_title }} | Álter Ego </title>
+{% else %}
+    <title>{{ post.title }} | Álter Ego</title>
+{% endif %}
+{% if post.seo_description %}
+    <meta name="description" content="{{post.seo_description}}">
+{% else %}
+    <meta name="description" content="{{ post.excerpt|raw }}">
+{% endif %}
+
+{% if post.seo_keywords %}
+    <meta name="keywords" content="{{post.seo_keywords}}">
+{% endif %}
+
+<meta property="og:title" content="{{ post.title }} | Álter Ego" />
+<meta property="og:url" content="{{ 'post'|page }}"/>
+<meta property="og:site_name" content="{{ post.title }}" />
+<meta property="og:description" content="{{ post.excerpt|raw }}" />
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ post.featured_images[0].path }}">
+
+<meta name="twitter:card" content="{{ post.excerpt|raw }}">
+<meta name="twitter:title" content="{{ post.title }} | Álter Ego">
+<meta name="twitter:description" content="{{ post.excerpt|raw }}">
+<meta name="twitter:image" content="{{ post.featured_images[0].path }}">

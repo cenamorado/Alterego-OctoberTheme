@@ -1,10 +1,13 @@
-title = "Posts"
-url = "/posts/:page?"
+url = "/:slug/:page?"
 layout = "default"
 
 [blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{:slug}}"
+postsPerPage = 10
+sortOrder = "published_at desc"
+categoryPage = 404
 postPage = "post"
-postsPerPage = "10"
 ==
 
 <div class="container post-container">
@@ -21,7 +24,7 @@ postsPerPage = "10"
                     <div class="comments">
                         <a href="">
                             <i class="fas fa-comment"></i>
-                            <p class="fb-comments-count" data-href="http://localhost:3002/posts/{{ post.categories[0].name }}/{{post.slug}}"></p>
+                            <p class="fb-comments-count" data-href="http://localhost:3000/post/{{post.slug}}"></p>
                         </a>
                     </div>
                     <div class="shares">
@@ -35,4 +38,3 @@ postsPerPage = "10"
         </div>
     {% endfor %}
 </div>
-
