@@ -65,7 +65,7 @@ categoryPage = "posts"
     </footer>
     <!-- Facebook Api Comments -->
     {% if this.page.id == post %}
-    <script src="https://graph.facebook.com/v2.4/?fields=share{comment_count}&amp;id=<http://localhost:3000/post/{{post.slug}}>"></script>
+    <script src="https://graph.facebook.com/v2.4/?fields=share{comment_count}&amp;id=<{{ 'post'|page }}>"></script>
     {% endif %}    
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2"></script>
     <!-- jQuery -->
