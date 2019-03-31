@@ -15,7 +15,7 @@
         <ul>
             {% for category in categories %}         
                 <a href="{{ category.url }}">
-                    <li style="background-image: url('{{ category.featured_images[0].thumb(200, 1000)}}')">
+                    <li style="background-image: url('{{ category.featured_images[0].thumb(400,900)}}')">
                         <p data-content="The beginning">{{ category.name }}</p>
                     </li>
                 </a> 
