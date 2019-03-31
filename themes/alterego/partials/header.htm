@@ -13,8 +13,12 @@
 <div class="overlay-navigation">
     <nav role="navigation">
         <ul>
-            {% for category in categories %}          
-                <li style="background-image: url('{{ category.featured_images[0].path}}')"><a href="{{ category.url }}" data-content="The beginning">{{ category.name }}</a></li>
+            {% for category in categories %}         
+                <a href="{{ category.url }}">
+                    <li style="background-image: url('{{ category.featured_images[0].thumb(200, 1000)}}')">
+                        <p data-content="The beginning">{{ category.name }}</p>
+                    </li>
+                </a> 
             {% endfor %}
         </ul>
     </nav>

@@ -19,11 +19,11 @@ $('.open-overlay').click(function() {
 		duration: 300,
 		delay: 0,
 		begin: function() {
-		  $('nav ul li').velocity('transition.perspectiveLeftIn', {
+		  $('nav ul a li').velocity('transition.perspectiveLeftIn', {
 			stagger: 150,
 			delay: 0,
 			complete: function() {
-			  $('nav ul li a').velocity({
+			  $('nav ul a li p').velocity({
 				opacity: [1, 0],
 			  }, {
 				delay: 10,
@@ -41,7 +41,7 @@ $('.open-overlay').click(function() {
 	  middle_bar.removeClass('animate-middle-bar').addClass('animate-out-middle-bar');
 	  bottom_bar.removeClass('animate-bottom-bar').addClass('animate-out-bottom-bar');
 	  overlay_navigation.removeClass('overlay-slide-down').addClass('overlay-slide-up')
-	  $('nav ul li').velocity('transition.perspectiveRightOut', {
+	  $('nav ul a li').velocity('transition.perspectiveRightOut', {
 		stagger: 150,
 		delay: 0,
 		complete: function() {
@@ -49,7 +49,7 @@ $('.open-overlay').click(function() {
 			delay: 0,
 			duration: 300,
 			complete: function() {
-			  $('nav ul li a').velocity({
+			  $('nav ul a li p').velocity({
 				opacity: [0, 1],
 			  }, {
 				delay: 0,

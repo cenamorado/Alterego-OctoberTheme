@@ -14,7 +14,7 @@ postPage = "post"
 ==
 <div class="container post-container">
     {% if post.featured_images[0] %}
-        <div class="post-featured-image" style="background-image: url('{{ post.featured_images[0].path }}')" >
+        <div class="post-featured-image" style="background-image: url('{{ post.featured_images[0].thumb(1000, 500) }}')" >
             <div class="post-category">
                 <h6>{{ post.categories[0].name }}</h6>
             </div>

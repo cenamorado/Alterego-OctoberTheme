@@ -50,10 +50,12 @@
 			display: -ms-flexbox;
 			display: flex;
 			list-style: none;
-			li {
+			a {
 				-webkit-flex-basis: 20%;
 				-ms-flex-preferred-size: 20%;
 				flex-basis: 20%;
+			}
+			li {				
 				-webkit-box-pack: center;
 				-webkit-justify-content: center;
 				-ms-flex-pack: center;
@@ -69,7 +71,7 @@
 				background-position: center center;
 				background-size: cover;
 				display: none;
-				a {
+				p {
 					position: relative;
 					top: 46%;
 					color: #fff;
@@ -82,11 +84,12 @@
 					text-align: center;
 					font-size: 0.9rem;
 					opacity: 0;
+					margin: 0;
 				}
 			}
 		}
 	}
-	nav li a:before {
+	nav li p:before {
 		content: '';
 		width: 70px;
 		height: 2px;
@@ -103,7 +106,7 @@
 		transition: all 0.2s linear;
 	}
 
-	nav li a:after {
+	nav li p:after {
 		content: attr(data-content);
 		font-size: 0.7rem;
 		-webkit-transition: all 0.2s linear;
@@ -125,14 +128,14 @@
 		letter-spacing: 0;
 	}
 
-	nav li a:hover:before {
+	nav a :hover:before {
 		-webkit-transform: translateX(0);
 		-ms-transform: translateX(0);
 		transform: translateX(0);
 		opacity: 1;
 	}
 
-	nav li a:hover:after {
+	nav a :hover:after {
 		-webkit-transform: translateY(15px);
 		-ms-transform: translateY(15px);
 		transform: translateY(15px);
@@ -201,22 +204,24 @@
 				-webkit-flex-direction: column;
 				-ms-flex-direction: column;
 				flex-direction: column;
-				li {
+				a {
 					height: 20%;
-					a {
+				}
+				li {					
+					p {
 						font-size: 11px;
 					}
 				}
 			}
 		}
-		nav li a:after {
+		nav a li p :after {
 			font-size: 0.6rem;
 			bottom: -25px;
 		}
-		nav li a:hover:after {
+		nav a li p :hover:after {
 			transform: translateY(0);
 		}
-		nav li a:before {
+		nav a li p :before {
 			width: 25px;
 		}
 	}
