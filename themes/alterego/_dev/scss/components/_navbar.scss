@@ -65,6 +65,9 @@
 				height: 100%;
 				overflow: hidden;
 				opacity: 0;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
 				display: none;
 				a {
 					position: relative;
@@ -82,7 +85,7 @@
 				}
 			}
 		}
-    }
+	}
 	nav li a:before {
 		content: '';
 		width: 70px;
@@ -135,26 +138,6 @@
 		transform: translateY(15px);
 		opacity: 1;
 	}
-
-	nav li:nth-of-type(1) {
-		background-color: #29363b;
-	}
-
-	nav li:nth-of-type(2) {
-		background-color: #ea495f;
-	}
-
-	nav li:nth-of-type(3) {
-		background-color: #f4837d;
-	}
-
-	nav li:nth-of-type(4) {
-		background-color: #fdcea9;
-	}
-
-	nav li:nth-of-type(5) {
-		background-color: #99b998;
-	}
 }
 
 /* ====================================
@@ -162,21 +145,21 @@
   ==================================== */
 
 .open-overlay {
-    top: 20px;
+	top: 20px;
 	position: fixed;
 	right: 5rem;
 	z-index: 100;
 	width: 34px;
 	display: block;
-    cursor: pointer;
-    
-    span {
-        display: block;
-        height: 1px;
-        background-color: $black;
-        cursor: pointer;
-        margin-top: 8px;
-    }
+	cursor: pointer;
+
+	span {
+		display: block;
+		height: 1px;
+		background-color: $black;
+		cursor: pointer;
+		margin-top: 8px;
+	}
 }
 
 .animate-top-bar {
@@ -209,6 +192,38 @@
 	animation: animate-out-middle-bar 0.6s linear 1 both;
 }
 
+@include media-breakpoint-down(sm) {
+	.overlay-navigation {
+		nav {
+			ul {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				li {
+					height: 20%;
+					a {
+						font-size: 11px;
+					}
+				}
+			}
+		}
+		nav li a:after {
+			font-size: 0.6rem;
+			bottom: -25px;
+		}
+		nav li a:hover:after {
+			transform: translateY(0);
+		}
+		nav li a:before {
+			width: 25px;
+		}
+	}
+	.open-overlay {
+		right: 20px !important;
+	}
+}
 /* ====================================
   Animation keyframes
   ==================================== */
