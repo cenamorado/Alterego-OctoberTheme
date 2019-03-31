@@ -12,7 +12,7 @@ categoryPage = "{{:category}}"
 category = "current"
 postPage = "post"
 ==
-<div class="container">
+<div class="container post-container">
     {% if post.featured_images[0] %}
         <div class="post-featured-image" style="background-image: url('{{ post.featured_images[0].path }}')" >
             <div class="post-category">
@@ -26,7 +26,7 @@ postPage = "post"
         <div class="comments">
             <a href="">
                 <i class="fas fa-comment"></i>
-                <p class="fb-comments-count" data-href="http://localhost:3000/post/{{post.slug}}"></p>
+                <p class="fb-comments-count" data-href="{{ 'post'|page }}"></p>
             </a>
         </div>
         <div class="shares">
@@ -40,14 +40,13 @@ postPage = "post"
     <p>{{ post.content_html|raw }}</p>
    
     <ul>
-            <li>
-              <a class="facebook customer share" href="https://www.facebook.com/sharer.php?u={{ 'post'|page }}" title="Facebook share" target="_blank">Facebook</a>
-            </li>
-            <li>
-              <a class="twitter customer share" href="https://twitter.com/share?url={{ 'post'|page }}&amp;text=Share popup on &amp;hashtags=codepen" title="Twitter share" target="_blank">Twitter</a>
-            </li>
-           
-          </ul>
+        <li>
+            <a class="facebook customer share" href="https://www.facebook.com/sharer.php?u={{ 'post'|page }}" title="Facebook share" target="_blank">Facebook</a>
+        </li>
+        <li>
+            <a class="twitter customer share" href="https://twitter.com/share?url={{ 'post'|page }}&amp;text=Share popup on &amp;hashtags=codepen" title="Twitter share" target="_blank">Twitter</a>
+        </li>
+    </ul>
     {% component 'nextAndPrev' %}
 
     <div id="fb-root"></div>

@@ -18,6 +18,11 @@
 		}
 	}
 }
+.post-container {
+	img {
+		width: 100%;
+	}
+}
 #next-prev {
 	@include flex();
 	justify-content: space-between;
