@@ -63,12 +63,12 @@ postPage = "post"
         if(navigator.share) {
             // Saving the button in the variable $buttonShare
             let $buttonShare = document.getElementById("button-share");
-            var $facebook = document.getElementById("facebook-share");
-            var $twitter = document.getElementById("twitter-share");
+            let $facebook = document.getElementById("facebook-share");
+            let $twitter = document.getElementById("twitter-share");
 
             facebook.parentNode.removeChild(facebook);
             twitter.parentNode.removeChild(twitter);
-            
+
             // Event click to the button 
             $buttonShare.addEventListener("click", function(e) {
                 e.preventDefault();
