@@ -22,6 +22,14 @@ slug = "{{ :slug }}"
             <div class="post-category">
                 <h6>{{ post.categories[0].name }}</h6>
             </div>
+            <div class="info-post-container">
+                <div class="autor">
+                    <h6>{{ post.author }}</h6>
+                </div>
+                <div class="date">
+                    <h6>{{ post.published_at|date(" g:i a, F j") }}</h6>
+                </div>
+            </div>
         </div>
     {% else %}
         <h5>slick</h5>

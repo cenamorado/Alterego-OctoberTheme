@@ -51,9 +51,9 @@
 			display: flex;
 			list-style: none;
 			a {
-				-webkit-flex-basis: calc(100% / 5);
-				-ms-flex-preferred-size: calc(100% / 5);
-				flex-basis: calc(100% / 5);
+				-webkit-flex-basis: calc(100% / 6);
+				-ms-flex-preferred-size: calc(100% / 6);
+				flex-basis: calc(100% / 6);
 			}
 			li {				
 				-webkit-box-pack: center;
@@ -202,7 +202,7 @@
 				-ms-flex-direction: column;
 				flex-direction: column;
 				a {
-					height: calc( 100% / 5 );
+					height: calc( 100% / 6 );
 				}				
 			}
 		}
