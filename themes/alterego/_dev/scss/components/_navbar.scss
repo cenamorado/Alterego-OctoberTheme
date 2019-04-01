@@ -51,9 +51,9 @@
 			display: flex;
 			list-style: none;
 			a {
-				-webkit-flex-basis: 20%;
-				-ms-flex-preferred-size: 20%;
-				flex-basis: 20%;
+				-webkit-flex-basis: calc(100% / 5);
+				-ms-flex-preferred-size: calc(100% / 5);
+				flex-basis: calc(100% / 5);
 			}
 			li {				
 				-webkit-box-pack: center;
@@ -202,7 +202,7 @@
 				-ms-flex-direction: column;
 				flex-direction: column;
 				a {
-					height: 20%;
+					height: calc( 100% / 5 );
 				}				
 			}
 		}
