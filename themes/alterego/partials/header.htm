@@ -1,26 +1,30 @@
 <nav class="navbar" role="navigation">
-    <div class="container container-flex">
-        <a href="{{ 'home'| page }}" class="logo">
-            <img src="{{ 'assets/images/logo.svg'|theme }}" alt=""><h3>ÁlterEgo</h3>
-        </a>     
-    </div>    
+	<div class="container container-flex">
+		<a href="{{ 'home' | page }}" class="logo">
+			<img src="{{ 'assets/images/logo.svg' | theme }}" alt="" />
+			<h3>ÁlterEgo</h3>
+		</a>
+	</div>
 </nav>
 <div class="open-overlay">
-    <span class="bar-top"></span>
-    <span class="bar-middle"></span>
-    <span class="bar-bottom"></span>
+	<span class="bar-top"></span>
+	<span class="bar-middle"></span>
+	<span class="bar-bottom"></span>
 </div>
 <div class="overlay-navigation">
-    <nav role="navigation">
-        <ul>
-            {% for category in categories %}         
-                <a href="{{ category.url }}">
-                    s
-                    <li style="background-image: url('{{ category.featured_images[0].thumb(400,900)}}')">
-                        <p data-content="The beginning">{{ category.name }}</p>
-                    </li>
-                </a> 
-            {% endfor %}
-        </ul>
-    </nav>
+	<nav role="navigation">
+		<ul>
+			{% for category in categories %}
+			<a href="{{ category.url }}">
+				<li
+					style="background-image: url('{{
+						category.featured_images[0].thumb(400, 900)
+					}}')"
+				>
+					<p data-content="The beginning">{{ category.name }}</p>
+				</li>
+			</a>
+			{% endfor %}
+		</ul>
+	</nav>
 </div>
