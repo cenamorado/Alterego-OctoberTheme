@@ -1,7 +1,9 @@
 <?php namespace Five04\BlogExt\Models;
 
 use Model;
+use BackendAuth;
 use RainLab\Blog\Models\Post;
+use Backend\Models\User;
 
 /**
  * PostDetails Model
@@ -27,10 +29,11 @@ class PostDetails extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
+    public $hasOne = [
+    ];
     public $hasMany = [];
     public $belongsTo = [
-        'post' => [ Post::class, 'table' => 'rainlab_blog_posts' ]
+        'post' => [ Post::class, 'table' => 'rainlab_blog_posts' ],
     ];
     public $belongsToMany = [];
     public $morphTo = [];

@@ -4,6 +4,7 @@ use System\Classes\PluginManager;
 use BackendAuth;
 use Backend;
 use Db;
+use Backend\Models\User;
 use System\Classes\PluginBase;
 use RainLab\Blog\Models\Post as PostModel;
 use RainLab\Blog\Controllers\Posts as PostController;
@@ -19,18 +20,17 @@ class Plugin extends PluginBase
      *
      * @return array
      */
-    
+
     public function pluginDetails()
-    {        
-       
+    {
+
 
         return [
             'name'        => 'BlogExt',
-            'description' => 'No description provided yet...',
+            'description' => 'BlogExt is a extenxion for a RainLab Blog , to add bakedn Author or Custon Author , Galerie Images,Subtitle',
             'author'      => 'Five04',
             'icon'        => 'icon-leaf'
         ];
-
     }
 
     /**
@@ -40,17 +40,23 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-        
-        \Event::listen('backend.form.extendFields', function($widget) {
+
+        \Event::listen('backend.form.extendFields', function ($widget) {
             if (PluginManager::instance()->hasPlugin('RainLab.Blog') && $widget->model instanceof PostModel) {
                 $widget->addFields([
-                    'author' => [
+                    'user' => [
                         'label'   => 'Author',
                         'tab'     => 'Details',
-                        'type'    => 'dropdown',
-                        'options' => $this->getIndexOptions(),
+                        'type'    => 'relation',
+                        'select'  => 'first_name',
                         'span' => 'auto'
                     ],
+                    // 'author' => [
+                    //     'label'   => 'Author',
+                    //     'tab'     => 'Details',
+                    //     'type'    => 'Text',
+                    //     'span' => 'auto'
+                    // ],
                     'subtitle' => [
                         'label'   => 'Subtitle',
                         'type'    => 'text',
@@ -76,16 +82,6 @@ class Plugin extends PluginBase
         });
     }
 
-    private function getIndexOptions()
-    {
-          
-        $users = Db::select('select * from backend_users where is_activated = 1');
-       
-        
-       
-        return ["index"=>"index","noindex"=>"noindex"];
-    }
-
     /**
      * Boot method, called right before the request route.
      *
@@ -93,20 +89,17 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        
-        PostModel::extend(function($model) {
+        PostModel::extend(function ($model) {
             $model->attachMany['galerie_images'] = [\System\Models\File::class];
-            $model->bindEvent('model.beforeDelete', function() use ($model) {
+            $model->bindEvent('model.beforeDelete', function () use ($model) {
                 $model->profile && $model->profile->delete();
             });
-            
-      
         });
     }
 
     /**
      * Registers any front-end components implemented in this plugin.
-     *  
+     *
      * @return array
      */
     public function registerComponents()
