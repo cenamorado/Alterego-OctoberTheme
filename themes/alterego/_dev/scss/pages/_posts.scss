@@ -12,6 +12,19 @@
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: cover;
+			position: relative;
+			.post-category {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				padding: 13px;
+				background: $black;
+				border-radius: 9px;
+				h6 {
+					letter-spacing: 7.2px;
+					color: $white;
+				}
+			}
 		}
 		.post-item-content {
 			margin: 0 auto;

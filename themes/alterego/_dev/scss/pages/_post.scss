@@ -6,6 +6,8 @@
 	background-position: center center;
 	background-size: cover;
 	border-radius: 15px;
+	overflow: hidden;
+	@include absolute-overlay();
 	.post-category {
 		position: absolute;
 		top: 30px;
@@ -27,8 +29,10 @@
 		justify-content: space-between;
 		padding: 0 15px;
 		.autor,.date {
+			z-index: 2;
 			h6 {
 				color: $white;
+				text-transform: uppercase;
 			}
 		}
 		.date {

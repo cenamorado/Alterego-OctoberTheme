@@ -23,15 +23,15 @@ slug = "{{ :slug }}"
 			post.featured_images[0].thumb(1000, 500)
 		}}')"
 	>
-		<div class="post-category">
+		{# <div class="post-category">
 			<h6>{{ post.categories[0].name }}</h6>
-		</div>
+		</div> #}
 		<div class="info-post-container">
 			<div class="autor">
 				<h6>{{ post.user.first_name }} {{ post.user.last_name }}</h6>
 			</div>
 			<div class="date">
-				<h6>{{ post.published_at|date(" g:i a, F j") }}</h6>
+				<h6>{{ post.published_at|date(" j F,Y") }}</h6>
 			</div>
 		</div>
 	</div>
