@@ -11,6 +11,9 @@ categoryPage = "{{:category}}"
 [nextAndPrev]
 category = "current"
 postPage = "post"
+
+[views]
+slug = "{{ :slug }}"
 ==
 
 <div class="container post-container">
@@ -63,8 +66,8 @@ postPage = "post"
         if(navigator.share) {
             // Saving the button in the variable $buttonShare
             let $buttonShare = document.getElementById("button-share");
-            let $facebook = document.getElementById("facebook-share");
-            let $twitter = document.getElementById("twitter-share");
+            var facebook = document.getElementById("facebook-share");
+            var twitter = document.getElementById("twitter-share");
 
             facebook.parentNode.removeChild(facebook);
             twitter.parentNode.removeChild(twitter);

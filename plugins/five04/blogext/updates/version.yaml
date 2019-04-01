@@ -1,0 +1,4 @@
+1.0.1: First version of BlogExt
+1.0.2:
+    - Create tables
+    - create_post_details_table.php

@@ -18,7 +18,7 @@ artisan
 index.php
 
 #Theme and plugin files
-!/plugins/five04/blank
+!/plugins/five04/blogext
 !/themes/alterego
 
 # IDEs and editors
