@@ -10,7 +10,8 @@
 	.comments,
 	.shares {
 		a {
-            @include flex();
+			@include flex();
+			flex-direction: row;
             align-items: center;
             color: $gray;
 			p {
@@ -19,6 +20,13 @@
 				color: $black;
 				font-weight: 600;
 			}
+		}
+	}
+	.shares {
+		@include flex();
+		flex-direction: row;
+		a {
+			margin-left: 5px;
 		}
 	}
 }

@@ -31,7 +31,13 @@ postPage = "post"
             </a>
         </div>
         <div class="shares">
-            <a href="">
+            <a class="facebook customer share" id="facebook-share" href="https://www.facebook.com/sharer.php?u={{ 'post'|page }}" title="Facebook share" target="_blank">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a class="twitter customer share" id="twitter-share" href="https://twitter.com/share?url={{ 'post'|page }}&amp;text=Share popup on &amp;hashtags=codepen" title="Twitter share" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" id="button-share">
                 <i class="fas fa-share"></i>
                 <p>Share</p>
             </a>
@@ -44,18 +50,7 @@ postPage = "post"
     {% for image in post.galerie_images %}
         <div style="background-image:url('{{ image.getThumb(400,300, 'crop') }}')"></div>
     {% endfor %}
-
-    <a href="" id="button-share" >Share</a>
-    
-    <ul>
-        <li>
-            <a class="facebook customer share" href="https://www.facebook.com/sharer.php?u={{ 'post'|page }}" title="Facebook share" target="_blank">Facebook</a>
-        </li>
-        <li>
-            <a class="twitter customer share" href="https://twitter.com/share?url={{ 'post'|page }}&amp;text=Share popup on &amp;hashtags=codepen" title="Twitter share" target="_blank">Twitter</a>
-        </li>
-    </ul>
-    
+        
     {% component 'nextAndPrev' %}
 
     <div id="fb-root"></div>
@@ -68,19 +63,24 @@ postPage = "post"
         if(navigator.share) {
             // Saving the button in the variable $buttonShare
             let $buttonShare = document.getElementById("button-share");
-    
-            // Event click to the button
+            var $facebook = document.getElementById("facebook-share");
+            var $twitter = document.getElementById("twitter-share");
+
+            facebook.parentNode.removeChild(facebook);
+            twitter.parentNode.removeChild(twitter);
+            // Event click to the button 
             $buttonShare.addEventListener("click", function(e) {
                 e.preventDefault();
     
                 // Saving the URL of the link
                 const URL = this.href;
-    
+                const TITULO = '{{ post.title }}';
+                const DESC = " {{ post.excerpt|raw }} "; 
                 // navigator.share is a function/method that receives
                 // an object with the following parameters:
                 navigator.share({
-                    title: "Web share API example",
-                    text: "Example of the use of web share api",
+                    title: TITULO,
+                    text: DESC,
                     url: URL // The url that is going to share is the url of the href
                 })
                 .then(() => console.log("Successful share")) // if everything goes well
@@ -92,7 +92,8 @@ postPage = "post"
     
         // alert, if it is not the browser is not compatible
         else {
-            alert("Your browser is not compatible with Web share APIs")
+            var movilshare = document.getElementById("button-share");
+            movilshare.parentNode.removeChild(movilshare);
         }
     
     }());
