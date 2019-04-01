@@ -5,12 +5,10 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 ==
-<div class="container">
-   <div class="home-category-container">
-   {% for category in categories %}      
-        <a  href="{{ category.url }}" class="categorys" style="background-image: url('{{ category.featured_images[0].thumb(700, 700)}}')">               
+<div class="home-category-container">
+    {% for category in categories %}
+        <a  href="{{ category.url }}" class="categorys" style="background-image: url('{{ category.featured_images[0].thumb(700, 700)}}')">
             <h2>{{ category.name }}</h2>
-        </a>       
+        </a>
     {% endfor %}
-    </div>
 </div>

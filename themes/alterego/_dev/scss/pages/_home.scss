@@ -2,15 +2,13 @@
 	@include flex();
 	flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+	justify-content: center;
+	height: 100vh;
 	.categorys {
 		@include flex();
 		position: relative;
 		justify-content: center;
 		align-items: center;
-		width: calc(95% / 3);
-		height: 450px;
-		margin: 10px;
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
@@ -43,6 +41,30 @@
 			&:after {
 				opacity: 1;
 			}
+		}
+		&:nth-child(1){
+			width: calc(100% / 2);
+			height: 100%;
+		}
+		&:nth-child(2){
+			width: calc(50% / 2);
+			height: 50%;
+		}
+		&:nth-child(3){
+			width: calc(50% / 2);
+			height: 50%;
+		}
+		&:nth-child(3){
+			width: calc(50% / 2);
+			height: 50%;
+		}
+		&:nth-child(3){
+			width: calc(50% / 2);
+			height: 50%;
+		}
+		&:nth-child(6){
+			width: calc(100% / 1);
+			height: 50%;
 		}
 	}
 }
