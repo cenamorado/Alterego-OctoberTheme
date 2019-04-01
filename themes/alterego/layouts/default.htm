@@ -17,6 +17,8 @@ categoryPage = "posts"
     <meta charset="utf-8">
     {% if this.page.id == 'post' %}
         {% partial 'ogmeta' %}
+    {% elseif this.page.id == 'posts' %}
+        {% partial 'seo-postscategories' %}
     {% else %}
         {% component 'SeoCmsPage' %}
     {% endif %}  
@@ -91,7 +93,6 @@ categoryPage = "posts"
     <!-- Transformicons
     <script src="{{ 'assets/js/transformicons.js'|theme }}"></script>
     <script>transformicons.add('.tcon')</script> -->
-
     {% framework extras %}
     {% scripts %}
     <!-----------------------------------------------------------------------------------

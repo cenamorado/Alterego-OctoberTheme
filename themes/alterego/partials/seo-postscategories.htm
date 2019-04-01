@@ -1,0 +1,8 @@
+{% for post in posts|slice(0, 1) %}    
+    {% for category in post.categories %}
+        <title>{{ category.name }} | Álter Ego </title>
+        <meta name="keywords" content="{{category.description}}">
+    {% endfor %}
+{% endfor %}
+
+

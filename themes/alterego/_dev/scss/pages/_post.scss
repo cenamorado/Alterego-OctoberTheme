@@ -40,6 +40,11 @@
 		}
 	}
 }
+.revista-container {
+	width: 100%;
+	height: 800px;
+	position: relative;
+}
 @include media-breakpoint-down(sm) {
 	.post-featured-image {
 		height: 300px;
