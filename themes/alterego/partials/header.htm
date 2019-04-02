@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation">
+<nav class="navbar {% if this.page.id == 'home' %}home{% endif %}" role="navigation">
 	<div class="container container-flex">
 		<a href="{{ 'home' | page }}" class="logo">
 			<img src="{{ 'assets/images/logo.svg' | theme }}" alt="" />
@@ -6,10 +6,10 @@
 		</a>
 	</div>
 </nav>
-<div class="open-overlay">
-	<span class="bar-top"></span>
-	<span class="bar-middle"></span>
-	<span class="bar-bottom"></span>
+<div class="open-overlay {% if this.page.id == 'home' %}home{% endif %}">
+	<span class="bar-top{% if this.page.id == 'home' %}-home{% endif %}"></span>
+	<span class="bar-middle{% if this.page.id == 'home' %}-home{% endif %}"></span>
+	<span class="bar-bottom{% if this.page.id == 'home' %}-home{% endif %}"></span>
 </div>
 <div class="overlay-navigation">
 	<nav role="navigation">

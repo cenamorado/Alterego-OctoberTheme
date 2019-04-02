@@ -36,7 +36,7 @@ categoryPage = "posts"
     <link rel="manifest" href="{{ 'assets/images/favicon/manifest.json'|theme }}">
     <link rel="mask-icon" href="{{ 'assets/images/favicon/safari-pinned-tab.svg'|theme }}" color="#00a4ff">
     <link rel="shortcut icon" href=" {{ 'assets/images/favicon/favicon.ico'|theme }} ">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="rgba(0, 0, 0, 0.1)">
     <!--end FAVICONS-->
 
     <!-- Google Material Icons -->
@@ -58,7 +58,7 @@ categoryPage = "posts"
         {% partial 'header' %}
     </header>
 
-    <section id="layout-content">
+    <section id="layout-content" class="{% if this.page.id == 'home' %}layout-content-home{% endif %}">
         {% page %}
     </section>
 
