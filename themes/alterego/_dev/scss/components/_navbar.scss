@@ -62,7 +62,7 @@
 				flex-basis: calc(100% / 5);
 				position: relative;
 				@include absolute-overlay();
-				
+
 				&:nth-child(6) {
 					display: none;
 				}
