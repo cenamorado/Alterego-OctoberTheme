@@ -9,35 +9,49 @@ sortOrder = "published_at desc"
 categoryPage = 404
 postPage = "post"
 ==
-<div class="container post-container">
-    {% for post in posts %}
-        <div class="post-item mb-5">
-            <a href="{{post.url}}">
-                <div class="post-item-img" style="background-image: url('{{ post.featured_images[0].thumb(1000, 600)}}')" >
-                    {# <div class="post-category">
-                        <h6>{{ post.categories[0].name }}</h6>
-                    </div> #}
-                </div>
-            </a>
-            <div class="post-item-content">
-                <h3 class="mb-4 mt-4">{{ post.title }}</h3>
-                <p class="mb-4">{{ post.summary|raw }}</p>
-                <hr />
-                <div class="social-content">
-                    <div class="comments">
-                        <a>
-                            <i class="fas fa-comment"></i>
-                            <p class="fb-comments-count" data-href="{{ 'home'|page }}/post/{{post.slug}}"></p>
-                        </a>
+{% if category.slug == 'cateogria5' %}
+    <div class="container">
+        <div class="post-galerie-container row mb-4">
+            {% for post in posts %}
+            <div class="col-6 col-md-4 col-xl-3 p-2">
+                <a href="{{post.url}}">
+                    <div class="img-grid" style="background-image:url('{{ post.featured_images[0].thumb(400, 300)}}"></div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <div class="container post-container">
+        {% for post in posts %}
+            <div class="post-item mb-5">
+                <a href="{{post.url}}">
+                    <div class="post-item-img" style="background-image: url('{{ post.featured_images[0].thumb(1000, 600)}}')" >
+                        {# <div class="post-category">
+                            <h6>{{ post.categories[0].name }}</h6>
+                        </div> #}
                     </div>
-                    <div class="shares">
-                        <a href="{{post.url}}">
-                            <i class="fas fa-share"></i>
-                            <p>More</p>
-                        </a>
+                </a>
+                <div class="post-item-content">
+                    <h3 class="mb-4 mt-4">{{ post.title }}</h3>
+                    <p class="mb-4">{{ post.summary|raw }}</p>
+                    <hr />
+                    <div class="social-content">
+                        <div class="comments">
+                            <a>
+                                <i class="fas fa-comment"></i>
+                                <p class="fb-comments-count" data-href="{{ 'home'|page }}/post/{{post.slug}}"></p>
+                            </a>
+                        </div>
+                        <div class="shares">
+                            <a href="{{post.url}}">
+                                <i class="fas fa-share"></i>
+                                <p>More</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
-</div>
+        {% endfor %}
+    </div>
+{% endif %}
