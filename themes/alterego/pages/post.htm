@@ -77,12 +77,17 @@ slug = "{{ :slug }}"
 	</div>
 	<h3 class="post-title mb-4">{{ post.title }}</h3>
 	<p>{{ post.content_html | raw }}</p>
+	<!-- Galery-->
+	<div class="post-galerie-container row mb-4">
+		{% for image in post.galerie_images %}
+		<div class="col-6 col-md-4 col-xl-3 p-2">
+			<div class="img-grid" style="background-image:url('{{ image.getThumb(400, 300, 'crop') }}')"></div>
+		</div>
+		{% endfor %}
+	</div>
 
-	{% for image in post.galerie_images %}
-	<div
-		style="background-image:url('{{ image.getThumb(400, 300, 'crop') }}')"
-	></div>
-	{% endfor %} {% component 'nextAndPrev' %}
+
+	{% component 'nextAndPrev' %}
 
 	<div id="fb-root"></div>
 	<div
