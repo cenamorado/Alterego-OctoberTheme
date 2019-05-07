@@ -49,6 +49,7 @@ class Plugin extends PluginBase
                         'tab'     => 'Details',
                         'type'    => 'relation',
                         'select'  => 'first_name',
+                        'emptyOption' => 'Disable',
                         'span' => 'auto'
                     ],
                     // 'author' => [
@@ -58,7 +59,7 @@ class Plugin extends PluginBase
                     //     'span' => 'auto'
                     // ],
                     'subtitle' => [
-                        'label'   => 'Subtitle',
+                        'label'   => 'Person',
                         'type'    => 'text',
                         'tab'     => 'Details',
                         'span' => 'auto'

@@ -16,28 +16,46 @@ postPage = "post"
 slug = "{{ :slug }}"
 ==
 <div class="container post-container">
-	{% if post.featured_images[0] %}
-	<div
-		class="post-featured-image"
-		style="background-image: url('{{
-			post.featured_images[0].thumb(1000, 500)
-		}}')"
-	>
-		{# <div class="post-category">
-			<h6>{{ post.categories[0].name }}</h6>
-		</div> #}
-		<div class="info-post-container">
-			<div class="autor">
-				<h6>{{ post.user.first_name }} {{ post.user.last_name }}</h6>
-			</div>
-			<div class="date">
-				<h6>{{ post.published_at|date(" j F,Y") }}</h6>
-			</div>
+	{% if post.categories[0].slug == 'momentaneo' %}
+		<div class="post-featured-image-galery" style="background-image: url('{{post.featured_images[0].thumb(1000, 500)}}')">
 		</div>
-	</div>
+		<div class="post-galery-info mt-3">
+			<p class="m-0">
+				{% if post.user_id == null %}
+					{{ post.subtitle }}
+				{% else %}
+					{{ post.user.first_name }} {{ post.user.last_name }}
+				{% endif %}
+			</p>
+			<p class="m-0">{{ post.published_at|date(" j F,Y") }}</p>
+		</div>
 	{% else %}
-	<h5>slick</h5>
+		{% if post.featured_images[0] %}
+			<div
+				class="post-featured-image"
+				style="background-image: url('{{
+					post.featured_images[0].thumb(1000, 500)
+				}}')"
+			>
+				{# <div class="post-category">
+					<h6>{{ post.categories[0].name }}</h6>
+				</div> #}
+				<div class="info-post-container">
+					<div class="autor">
+						{% if post.user_id == null %}
+							<h6>{{ post.subtitle }}</h6>
+						{% else %}
+							<h6>{{ post.user.first_name }} {{ post.user.last_name }}</h6>
+						{% endif %}
+					</div>
+					<div class="date">
+						<h6>{{ post.published_at|date(" j F,Y") }}</h6>
+					</div>
+				</div>
+			</div>
+		{% endif %}
 	{% endif %}
+
 	<div class="post-shares-bottons mt-3 mb-3">
 		<div class="comments">
 			<a href="">
