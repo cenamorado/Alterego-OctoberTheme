@@ -17,7 +17,7 @@ slug = "{{ :slug }}"
 ==
 <div class="container post-container">
 	{% if post.categories[0].slug == 'momentaneo' %}
-		<div class="post-featured-image-galery" style="background-image: url('{{post.featured_images[0].thumb(1000, 500)}}')">
+		<div class="post-featured-image-galery" style="background-image: url('{{post.featured_images[0].path}}')">
 		</div>
 		<div class="post-galery-info mt-3">
 			<p class="m-0">
