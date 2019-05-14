@@ -67,6 +67,7 @@ categoryPage = "posts"
 
     <section id="layout-content" class="{% if this.page.id == 'home' %}layout-content-home{% endif %}">
         {% page %}
+        {% component 'googleTracker' %}
     </section>
 
     <footer id="layout-footer">
