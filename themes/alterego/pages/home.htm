@@ -5,6 +5,11 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 ==
+<div class="container">
+    <div class="slick">
+        <div class="slide"></div>
+    </div>
+</div>
 <div class="home-category-container">
     {% for category in categories %}
         <a  href="{{ category.url }}" class="categorys" style="background-image: url('{{ category.featured_images[0].thumb(700, 700)}}')">
